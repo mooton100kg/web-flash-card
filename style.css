@@ -1,30 +1,53 @@
 body{
-	background-color: rgb(28, 28, 28);
+	background-color: rgb(48, 50, 53);
 }
 .container{
 	vertical-align: middle;
 }
 
 .card{
-	height: 20vh;
+	height: 15vh;
 	width: 90vw;
-	box-shadow: 5px 5px 20px black;
-	border-style: hidden;
+	background-color: rgb(34, 36, 38);
+	border-radius: 10px;
 	margin: 20px;
-	background-color: rgb(43, 43, 43);
 }
+.card:hover > *{
+	color: rgb(209, 208, 197);
+}
+
 
 .name,.caption{
 	text-align: center;
 }
 
 .name{
-	margin-top: 10px;
-	color: white;
+	color: rgb(100, 102, 105);
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	margin: 0px;
+	font-size: 5vh;
 }
 
 .caption{
-	color: gray;
-	margin-bottom: 10px;
+	color: rgb(100, 102, 105);
+	margin: 0px;
+	font-size: 3vh;
 }
+
+.tab{
+	width: 100vw;
+	height: 10vh;
+	bottom: 0;
+	position: fixed;
+	background-color: rgb(226, 183, 18);
+	text-align: center;
+	font-size: 5vh;
+	color: rgb(48, 50, 53);
+}
+
+.tab:hover {
+	color: rgb(209, 208, 197);
+}
+
 
