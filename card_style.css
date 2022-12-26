@@ -1,0 +1,23 @@
+body{
+	background-color: rgb(48, 50, 53);
+}
+
+.header-container h1{
+	color: rgb(209, 208, 197);
+}
+
+.header-container p{
+	color: rgb(100, 102, 105);
+}
+
+.fa-solid{
+	color: rgb(100, 102, 105);
+}
+
+.fa-solid:hover{
+	color: rgb(209, 208, 197);
+}
+
+.table-wrapper{
+	background-color: red;
+}
