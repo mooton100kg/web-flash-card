@@ -2,16 +2,33 @@ body{
 	background-color: rgb(48, 50, 53);
 }
 
-.header-container h1{
+.header-container{
+	display: inline-block;
+}
+#name{
+	width: 50vw;
 	color: rgb(209, 208, 197);
+	margin: 0;
+	padding: 5px;
+	border: solid;
+	font-size: 10vw;
 }
 
-.header-container p{
+#caption{
+	width: 50vw;
 	color: rgb(100, 102, 105);
+	margin: 0;
+	padding-left: 5px;
+	border: solid;
+	font-size: 5vw;
 }
 
 .fa-solid{
 	color: rgb(100, 102, 105);
+	position: absolute;
+	right: 0;
+	padding-right: 10px;
+	font-size: 10vw;
 }
 
 .fa-solid:hover{
@@ -20,4 +37,19 @@ body{
 
 .table-wrapper{
 	background-color: red;
+}
+
+.tab{
+	position: absolute;
+	bottom: 0;
+	background-color: rgb(226, 183, 18);
+	color: rgb(48, 50, 53); 
+	width: 100vw;
+	height: 10vh;
+	text-align: center;
+	font-size: 8vh;
+}
+
+.tab:hover{
+	color: rgb(209, 208, 197);
 }
