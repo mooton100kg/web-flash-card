@@ -1,0 +1,30 @@
+body{
+	background-color: rgb(28, 28, 28);
+}
+.container{
+	vertical-align: middle;
+}
+
+.card{
+	height: 20vh;
+	width: 90vw;
+	box-shadow: 5px 5px 20px black;
+	border-style: hidden;
+	margin: 20px;
+	background-color: rgb(43, 43, 43);
+}
+
+.name,.caption{
+	text-align: center;
+}
+
+.name{
+	margin-top: 10px;
+	color: white;
+}
+
+.caption{
+	color: gray;
+	margin-bottom: 10px;
+}
+
