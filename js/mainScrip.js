@@ -13,7 +13,7 @@ function handleClick(event){
 
 			sessionStorage.setItem(k, v);
 		}
-		window.location.replace(_page2);
+		window.open(_page2, "_self");
 
 	}
 }
