@@ -44,7 +44,12 @@ async function handleClick(event){
 		const setDoc = doc(db, "admin", sessionStorage.getItem("name"));
 		const cardsCol =  collection(setDoc, "cards");
 		const cards = await getDocs(cardsCol);
-		sessionStorage.setItem("cards", cards);
+		let cardInfo = new Array()
+		
+		cards.forEach((card)=>{
+			cardInfo.push([card.data().word, card.data().meaning]);
+		});
+		sessionStorage.setItem("cards", cardInfo);
 		window.open(_page2, "_self");
 
 

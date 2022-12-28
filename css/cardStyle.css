@@ -13,27 +13,29 @@ body{
 .header-container{
 	margin: 1vw;
 	padding-bottom: 1vh;
-	border-bottom: 2px solid var(--color-white);
+	border-bottom: 1px solid var(--color-gray);
 }
 #name{
 	width: 50vw;
 	color: var(--color-yellow);
 	margin: 0;
 	padding-left: 5px;
-	font-size: 5vw;
+	font-size: 5vh;
 }
 
 #caption{
 	width: 50vw;
-	color: var(--color-white);
+	color: var(--color-gray);
 	margin: 0;
 	padding-left: 5px;
-	font-size: 2vw;
+	font-size: 2vh;
 }
 
 .fa-solid{
 	color: var(--color-gray);
-	font-size: 2vw;
+	position: absolute;
+	right: 1vw;
+	top: 2.5vh;
 }
 
 .fa-solid:hover{
@@ -51,6 +53,7 @@ body{
 .table-users{
 	width: 100%;
 	border-collapse: collapse;
+	font-size: 3vh;
 }
 
 .table-users th, .table-users td{
