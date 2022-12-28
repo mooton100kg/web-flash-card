@@ -1,15 +1,23 @@
+:root{
+	--color-bg: rgb(48, 50, 53);
+	--color-gray: rgb(100, 102, 105);
+	--color-darkRray: rgb(34, 36, 38);
+	--color-yellow: rgb(226, 183, 18);
+	--color-white: rgb(209, 208, 197);
+}
+
 body{
-	background-color: rgb(48, 50, 53);
+	background-color: var(--color-bg);
 }
 
 .header-container{
 	margin: 1vw;
 	padding-bottom: 1vh;
-	border-bottom: 2px solid rgb(209, 208, 197);
+	border-bottom: 2px solid var(--color-white);
 }
 #name{
 	width: 50vw;
-	color: rgb(226, 183, 18);
+	color: var(--color-yellow);
 	margin: 0;
 	padding-left: 5px;
 	font-size: 5vw;
@@ -17,35 +25,53 @@ body{
 
 #caption{
 	width: 50vw;
-	color: rgb(209, 208, 197);
+	color: var(--color-white);
 	margin: 0;
 	padding-left: 5px;
 	font-size: 2vw;
 }
 
 .fa-solid{
-	color: rgb(100, 102, 105);
-	position: absolute;
-	right: 0;
-	padding-right: 10px;
-	font-size: 10vw;
+	color: var(--color-gray);
+	font-size: 2vw;
 }
 
 .fa-solid:hover{
-	color: rgb(209, 208, 197);
+	color: var(--color-white);
 }
 
 .table-wrapper{
-	background-color: rgb(34, 36, 38);
-	border-radius: 10px;	
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 1vh;
+	margin: 0;
+	color: var(--color-white);
+}
+
+.table-users{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-users th, .table-users td{
+	text-align: center;
+	padding: .5rem;
+}
+
+.table-users td{
+	border-bottom: 1px solid var(--color-gray);
+}
+
+.table-users th{
+	background-color: var(--color-darkRray);
 }
 
 .tab{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background-color: rgb(226, 183, 18);
-	color: rgb(48, 50, 53); 
+	background-color: var(--color-yellow);
+	color: var(--color-bg); 
 	width: 100vw;
 	height: 10vh;
 	text-align: center;
@@ -53,5 +79,5 @@ body{
 }
 
 .tab:hover{
-	color: rgb(209, 208, 197);
+	color: var(--color-white);
 }

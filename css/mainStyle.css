@@ -5,7 +5,7 @@ body{
 	vertical-align: middle;
 }
 
-.card{
+.set{
 	height: 15vh;
 	width: 90vw;
 	background-color: rgb(34, 36, 38);
@@ -15,7 +15,7 @@ body{
 	margin-bottom: 2vh;
 }
 
-.card:hover > *{
+.set:hover > *{
 	color: rgb(209, 208, 197);
 }
 
