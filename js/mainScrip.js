@@ -19,6 +19,7 @@ const sets  = await getData(db);
 
 //page path
 const _page2 = "html/cardInfo.html";
+const _pageEdit = "html/cardEdit.html";
 
 document.body.onload = addElement(); 
 document.addEventListener("click", handleClick);
@@ -51,12 +52,14 @@ async function handleClick(event){
 		});
 		sessionStorage.setItem("cards", cardInfo);
 		window.open(_page2, "_self");
-
-
+	}
+	else if (event.target.className == "tab"){
+		window.open(_pageEdit, "_self");
 	}
 }
 
 function addElement(){
+	sessionStorage.clear();
 	sets.forEach((set)=>{
 		const newSet = document.createElement("div");
 		newSet.className = "set";
@@ -76,6 +79,5 @@ function addElement(){
 		const container = document.getElementById("container");
 		container.appendChild(newSet);
 	});
-
 }
 

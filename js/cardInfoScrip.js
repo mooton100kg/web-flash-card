@@ -1,14 +1,20 @@
-//parameter
+//get data from sessionStorage
 const cards = sessionStorage.getItem("cards");
+const setName = sessionStorage.getItem("name");
 
 //HTML element
-const setName = sessionStorage.getItem("name");
 const table = document.getElementsByClassName("table-users")[0];
 const name = document.getElementById("name");
+const pen = document.getElementsByClassName("fa-pen")[0];
 
 //load & edite element
 document.body.onload = addElement();
 window.addEventListener("resize", editeIconSize);
+
+//change to edit page
+pen.onclick = function(){
+	window.open("cardEdit.html", "_self");
+};
 
 function editeIconSize(){
 	const H = name.offsetHeight;
