@@ -19,57 +19,88 @@ else{
 
 document.body.onload = addElement();
 document.addEventListener("click", handleClick);
-window.addEventListener("resize", editeIconSize);
+window.addEventListener("resize", editElementSize);
 
 function handleClick(event){
 	if (event.target.className == "fa-solid fa-circle-plus"){
-		//editTable("addn");
-		console.log(table.rows[1].cells[0].getElementById("input").value);
-		for (var i = 0; i < table.rows.length; i++){
-
+		editTable("addn");
+		const checkboxs = document.getElementsByClassName("selectbox");
+	
+		for (var i = 0; i < checkboxs.length; i++){
+			checkboxs[i].checked = false;
 		}
 	}
 	else if (event.target.className == "fa-solid fa-circle-minus"){
-		editTable("delete", -1);
+		const checkboxs = document.getElementsByClassName("selectbox");
+		let haveChacked = false;
+		for (var i = 0; i <checkboxs.length; i++){
+			if (checkboxs[i].checked){
+				editTable("delete", checkboxs[i].parentNode.parentNode.rowIndex)
+				haveChacked = true; 
+			}
+		}
+		if (!haveChacked){
+			editTable("delete", -1)
+		}
 	}
 	else if (event.target.className == "fa-solid fa-trash"){
 		console.log("delete set");
 	}
 }
 
-function editTable(eType, i){
-	if (eType == "addn" || eType == "addw"){
-		const row = table.insertRow(-1);
-		const wordCol = row.insertCell(0);
-		const meaningCol = row.insertCell(1);
+function editTablePara(eType, n, i){
+	const obj = {};
 
-		const wordInput = document.createElement("input");
-		const meaningInput = document.createElement("input");
+	if (i ==  0){
+		//check Col
+		obj["type"] = "checkbox";
+		obj["className"] = "selectbox";
 
-		wordInput.placeholder = "input word";
-		meaningInput.placeholder = "input meaning";
-
-		wordInput.id = "input";
-		meaningInput.id = "input";
-
+	} else if (i ==  1){
+		//word Col
+		obj["placeholder"] = "input word";
+		obj["id"] = "input";
+		
 		if (eType == "addw"){
-			wordInput.value = cards[i];
-			meaningInput.value = cards[i+1];
+			obj["value"] = cards[n]; 
 		}
 
-		wordCol.appendChild(wordInput);
-		meaningCol.appendChild(meaningInput);
+	} else if (i ==  2){
+		//meaning Col
+		obj["placeholder"] = "input meaning";
+		obj["id"] = "input";
+
+		if (eType == "addw"){
+			obj["value"] = cards[n+1];
+		}
+
+	}
+
+	return obj
+}
+
+function editTable(eType, n){
+	if (eType == "addn" || eType == "addw"){
+		const row = table.insertRow(-1);
+		for (var i = 0; i < 3; i++){
+			row.insertCell(i).appendChild(
+				Object.assign(
+					document.createElement("input"),
+					editTablePara(eType, n, i)
+				)
+			);
+		}
 	}
 	else if (eType == "delete"){
 		if (table.rows.length > 3){
-			table.deleteRow(i);
+			table.deleteRow(n);
 		}
 	}
 
 }
 
 function addElement(){
-	editeIconSize();
+	editElementSize();
 
 	if (setName != null){
 		document.getElementById("name").value = setName;
@@ -84,9 +115,11 @@ function addElement(){
 	}
 }
 
-function editeIconSize(){
+function editElementSize(){
+	//icon
 	const H = name.offsetHeight-10;
 	const icon = document.getElementsByClassName("fa-trash")[0];
 
 	icon.style.fontSize = H+"px";
+
 }
