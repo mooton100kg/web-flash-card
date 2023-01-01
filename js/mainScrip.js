@@ -2,6 +2,7 @@ import {db, getData} from "./firebase.js";
 
 //get data from database
 const sets  = await getData(db, "sets");
+const cards = await getData(db, "cards");
 
 //page path
 const _page2 = "html/cardInfo.html";
@@ -10,7 +11,7 @@ const _pageEdit = "html/cardEdit.html";
 document.body.onload = addElement(); 
 document.addEventListener("click", handleClick);
 
-async function handleClick(event){
+function handleClick(event){
 	if (event.target.parentNode.className == "set"){
 		const set = event.target.parentNode;
 		//save set name & caption to sessionStorage
@@ -21,7 +22,6 @@ async function handleClick(event){
 			sessionStorage.setItem(k, v);
 		}
 		//save set data to sessionStorage
-		const cards = await getData(db, "cards");
 		let cardInfo = new Array()
 		
 		cards.forEach((card)=>{
